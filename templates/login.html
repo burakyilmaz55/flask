@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+    {% block body %}
+        {% if session['logged_in'] %}
+        <p>Zaten hesabınızdasınız!</p>
+        
+        {% else %}
+        <h2>Giriş</h2>
+        <form action="/login/" method="POST">
+            <input type="username" name="username" placeholder="Kullanıcı Adı">
+            <input type="password" name="password" placeholder="Parola">
+            <input type="submit" value="Giriş">
+        </form>
+        {% endif %}
+{% endblock body %}
